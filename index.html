@@ -3,359 +3,451 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Teamsync by WorkVision Labs — Futuristic collaboration meets effortless clarity. Launching Q3 2025." />
-  <title>Teamsync | Coming Soon</title>
+  <meta name="description" content="WorkVision Labs — A training lab for engineering students to build real-world projects in squads, guided by mentors. Launching Q3 2025." />
+  <title>WorkVision Labs | Coming Soon</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-  :root {
-    --bg-dark: #090e1a;
-    --bg-glow: radial-gradient(circle at center, rgba(0, 255, 255, 0.08), transparent 60%);
-    --accent-cyan: #00fff7;
-    --accent-pink: #ff00c8;
-    --text-light: #e0f7fa;
-    --text-muted: #7dd3fc;
-    --font-main: 'Segoe UI', 'Inter', sans-serif;
-    --q-color: #c084fc;
-  }
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  html, body {
-    height: 100%;
-    background: var(--bg-dark);
-    color: var(--text-light);
-    font-family: var(--font-main);
-    overflow-x: hidden;
-  }
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: var(--bg-glow);
-    pointer-events: none;
-    z-index: 0;
-  }
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    max-width: 960px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-  .header-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  .header-logo img {
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    box-shadow: 0 0 12px var(--accent-cyan);
-  }
-  .header-logo span {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--accent-cyan);
-  }
-  .container {
-    max-width: 960px;
-    margin: auto;
-    padding: 4rem 2rem 2rem;
-    position: relative;
-    z-index: 1;
-    text-align: center;
-  }
-h1 {
-  font-size: 4rem;
-  background: linear-gradient(to right, var(--accent-cyan), var(--accent-pink));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  min-height: 74px; /* 👈 Add this line */
+<style>
+    :root {
+      --bg-dark: #090e1a;
+      --bg-glow: radial-gradient(circle at center, rgba(0, 255, 255, 0.08), transparent 60%);
+      --accent-cyan: #00fff7;
+      --accent-pink: #ff00c8;
+      --text-light: #e0f7fa;
+      --text-muted: #7dd3fc;
+      --font-main: 'Segoe UI', 'Inter', sans-serif;
+      --q-color: #c084fc;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      background: var(--bg-dark);
+      color: var(--text-light);
+      font-family: var(--font-main);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: var(--bg-glow);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .header-logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px var(--accent-cyan);
+    }
+
+    .header-logo span {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 4rem 2rem 2rem;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 4rem;
+      background: linear-gradient(to right, var(--accent-cyan), var(--accent-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      min-height: 74px;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .email-form {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    #email-subscribe {
+  position: relative;
+  z-index: 10;
+  padding: 4rem 1rem;
+  background-color: white;
 }
 
-@keyframes blinkCursor {
-  from, to { border-color: transparent; }
-  50% { border-color: var(--accent-cyan); }
-}
+    .email-form input {
+      padding: 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      background: #131a2a;
+      color: white;
+      width: 300px;
+    }
 
-  .subtitle {
-    color: var(--text-muted);
-    font-size: 1.3rem;
-    margin-bottom: 2.5rem;
-  }
-  .email-form {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .email-form input {
-    padding: 1rem;
-    font-size: 1rem;
-    border-radius: 8px;
-    border: none;
-    background: #131a2a;
-    color: white;
-    width: 300px;
-  }
-  .email-form button {
-    padding: 1rem 1.6rem;
-    font-size: 1rem;
-    border-radius: 8px;
-    border: none;
-    background: linear-gradient(to right, var(--accent-pink), var(--accent-cyan));
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 0 12px var(--accent-cyan);
-    transition: transform 0.3s ease;
-  }
-  .email-form button:hover {
-    transform: translateY(-2px);
-  }
-  .glow-section {
-    margin-top: 4rem;
-    text-align: center;
-  }
-  .glow-section h2 {
-    font-size: 2.2rem;
-    color: var(--accent-cyan);
-    margin-bottom: 1rem;
-  }
-  .glow-section p {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    max-width: 720px;
-    margin: 0 auto 2rem;
-  }
-  .timeline-wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: relative;
-    padding: 3rem 1rem;
-    overflow-x: auto;
-    gap: 2rem;
-  }
-  .timeline-event {
-    flex: 0 0 auto;
-    width: 240px;
-    background: #131a2a;
-    padding: 1.2rem;
-    border-radius: 10px;
-    border: 2px solid var(--q-color);
-    box-shadow: 0 0 12px var(--q-color);
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .timeline-event:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 20px var(--q-color), 0 0 30px var(--q-color);
-  }
-  .timeline-event h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: var(--q-color);
-  }
-  .timeline-event p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-  }
-  .timeline-connector {
-    position: absolute;
-    top: 50%;
-    left: 120px;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(to right, var(--accent-cyan), var(--accent-pink));
-    z-index: -1;
-    box-shadow: 0 0 12px var(--accent-cyan);
-  }
-  .faq-section, .social-section {
-    max-width: 960px;
-    margin: 3rem auto 0;
-    padding: 2rem;
-    text-align: center;
-  }
-  .faq-section h3, .social-section h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: var(--accent-cyan);
-  }
-  .faq-section p, .social-section a {
-    color: var(--text-muted);
-    font-size: 1rem;
-  }
- .social-section a {
-  display: inline-block;
-  margin: 0.5rem 1rem;
-  color: var(--text-muted);
-  font-size: 1.8rem;
-  transition: color 0.3s ease;
-}
-.social-section a:hover {
-  color: var(--accent-cyan);
-}
-  footer {
-    text-align: center;
-    padding: 2rem;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    margin-top: 2rem;
-  }
-  footer a {
-    color: var(--accent-cyan);
-    text-decoration: none;
-  }
-  .footer-links {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-  .footer-links a {
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    transition: color 0.2s ease;
-  }
-  .footer-links a:hover {
-    color: var(--accent-cyan);
-  }
-  @media (max-width: 600px) {
-    h1 { font-size: 2.4rem; }
-    .subtitle { font-size: 1rem; }
-  }
+    .email-form button {
+      padding: 1rem 1.6rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      background: linear-gradient(to right, var(--accent-pink), var(--accent-cyan));
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 0 12px var(--accent-cyan);
+      transition: transform 0.3s ease;
+    }
 
-  /* UPDATED TEAM SECTION */
-  .team-section {
-    text-align: center;
-    padding: 4rem 1rem;
-    background: transparent;
-    position: relative;
-    z-index: 1;
-  }
-  .team-title {
-    font-size: 2rem;
-    color: var(--accent-cyan);
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-  }
-  .team-cards {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  .team-card {
-    width: 260px;
-    height: 340px;
-    perspective: 1200px;
-  }
-  .card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.9s cubic-bezier(0.4, 0.2, 0.2, 1);
-  }
-  .team-card:hover .card-inner {
-    transform: rotateY(180deg);
-  }
-  .card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 16px;
-    backface-visibility: hidden;
-    box-shadow: 0 0 18px rgba(168, 85, 247, 0.4), 0 0 30px rgba(168, 85, 247, 0.2);
-    border: 1px solid rgba(168, 85, 247, 0.6);
-    background: #131a2a;
-    color: #fff;
-    padding: 1.5rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .card-front img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    box-shadow: 0 0 12px var(--accent-cyan);
-  }
-  .card-front h3 {
-    font-size: 1.3rem;
-    margin: 0.5rem 0;
-    color: var(--accent-cyan);
-  }
-  .card-front p {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-  }
-  .card-back {
-    transform: rotateY(180deg);
-    font-size: 1rem;
-    font-style: italic;
-    text-align: center;
-    padding: 2rem;
-    line-height: 1.5;
-  }
-  body > *:last-child {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
-</style>
+    .email-form button:hover {
+      transform: translateY(-2px);
+    }
+
+    .glow-section {
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    .glow-section h2 {
+      font-size: 2.2rem;
+      color: var(--accent-cyan);
+      margin-bottom: 1rem;
+    }
+
+    .glow-section p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      line-height: 1.8;
+    }
+
+    .timeline-wrapper {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      padding: 3rem 1rem;
+      overflow-x: auto;
+      gap: 2rem;
+    }
+
+    .timeline-event {
+      flex: 0 0 auto;
+      width: 240px;
+      background: #131a2a;
+      padding: 1.2rem;
+      border-radius: 10px;
+      border: 2px solid var(--q-color);
+      box-shadow: 0 0 12px var(--q-color);
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .timeline-event:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px var(--q-color), 0 0 30px var(--q-color);
+    }
+
+    .timeline-event h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--q-color);
+    }
+
+    .timeline-event p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .timeline-connector {
+      position: absolute;
+      top: 50%;
+      left: 120px;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--accent-cyan), var(--accent-pink));
+      z-index: -1;
+      box-shadow: 0 0 12px var(--accent-cyan);
+    }
+
+    .team-section {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: transparent;
+      position: relative;
+      z-index: 1;
+    }
+
+    .team-title {
+      font-size: 2rem;
+      color: var(--accent-cyan);
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .team-cards {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .team-card {
+      width: 260px;
+      height: 340px;
+      perspective: 1200px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.9s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+
+    .team-card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      backface-visibility: hidden;
+      box-shadow: 0 0 18px rgba(168, 85, 247, 0.4), 0 0 30px rgba(168, 85, 247, 0.2);
+      border: 1px solid rgba(168, 85, 247, 0.6);
+      background: #131a2a;
+      color: #fff;
+      padding: 1.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-front img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 12px var(--accent-cyan);
+    }
+
+    .card-front h3 {
+      font-size: 1.3rem;
+      margin: 0.5rem 0;
+      color: var(--accent-cyan);
+    }
+
+    .card-front p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+      font-size: 1rem;
+      font-style: italic;
+      text-align: center;
+      padding: 2rem;
+      line-height: 1.5;
+    }
+
+    .faq-section, .social-section {
+      max-width: 960px;
+      margin: 3rem auto 0;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .faq-section h3, .social-section h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--accent-cyan);
+    }
+
+    .faq-section p, .social-section a {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    .social-section a {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      color: var(--text-muted);
+      font-size: 1.8rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-section a:hover {
+      color: var(--accent-cyan);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      margin-top: 2rem;
+    }
+
+    footer a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    .footer-links {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-cyan);
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.4rem; }
+      .subtitle { font-size: 1rem; }
+    }
+    /* Mentor Cards */
+    .mentors {
+      margin-top: 4rem;
+    }
+
+    .mentor-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--accent-cyan);
+    }
+
+    .mentor-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .mentor-card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      width: 220px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid var(--card-border);
+    }
+
+    .mentor-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    .mentor-card h4 {
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    .mentor-card p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="header-logo">
-      <img src="./teamsync_logo_cropped.png" alt="Teamsync logo" />
+      <img src="./workvision_logo.png" alt="WorkVision logo" />
       <span>WorkVision Labs</span>
     </div>
   </header>
 
   <div class="container">
     <h1 id="hero-title"></h1>
-    <p class="subtitle">The future of async collaboration — built for clarity, trust, and scale.</p>
-    <div class="email-form">
-      <input type="email" placeholder="Your email" aria-label="Email address">
-      <button>Request Beta Access</button>
-    </div>
+    <p class="subtitle">
+     From Campus Coders to SaaS Builders
+    </p>
+    <form id="emailForm" class="email-form">
+  <input
+    type="email"
+    name="email"
+    id="emailInput"
+    placeholder="Enter your email"
+    required />
+  <button type="submit">Join Waitlist</button>
+</form>
+<p id="responseMsg" style="margin-top: 1rem;"></p>
 
     <div class="glow-section">
-      <h2>Why We're Building This</h2>
-      <p>In a world of noisy tools and endless meetings, Teamsync offers a calm, intelligent space for your team to align without chaos. We're on a mission to simplify communication, and empower teams to work deeply — on their terms.</p>
-
+     <h2>Why We're Building This</h2>
+<p>
+  India has no shortage of talent — just a lack of real exposure.
+  <br/><br/>
+  WorkVision Labs is our bet on students who are ready to build, not just learn.
+  <br/><br/>
+  Squad-based projects. Real product challenges. Mentorship from builders.
+  <br/><br/>
+  We're not here to teach you theory. We're here to help you ship.
+</p>
       <div class="timeline-wrapper">
         <div class="timeline-connector"></div>
-        <div class="timeline-event q2">
-          <h4>Q2 2025</h4>
-          <p>Closed beta begins with early adopter teams across industries.</p>
-        </div>
         <div class="timeline-event q3">
           <h4>Q3 2025</h4>
-          <p>Public launch with mobile rollout for iOS & Android.</p>
+          <p>First cohort launches with 5+ real-world projects and 50 selected students.</p>
         </div>
         <div class="timeline-event q4">
           <h4>Q4 2025</h4>
-          <p>Product-level AI launches: Smart Check-ins, Calendar Log Sync, and Insight Reports.</p>
+          <p>Student-built projects demoed to hiring partners and early-stage startups.</p>
+        </div>
+        <div class="timeline-event q1">
+          <h4>Q1 2026</h4>
+          <p>Second cohort expands to more colleges with domain-specific tracks (AI/Backend/Product).</p>
         </div>
       </div>
     </div>
-    
     <section class="team-section">
   <h2 class="team-title">Meet the Founders</h2>
   <div class="team-cards">
@@ -365,10 +457,10 @@ h1 {
         <div class="card-front">
           <img src="https://media.licdn.com/dms/image/v2/D5603AQE0OkPMr6rEsg/profile-displayphoto-scale_400_400/B56ZfQxHZAH8Ag-/0/1751554228120?e=1756339200&v=beta&t=BK9ZIk05IKDwf8x0pG2TFE2cNICNITuyQeW_haObpaU" alt="Mayank Mishra">
           <h3>Mayank Mishra</h3>
-          <p>Founding Backend Engineer</p>
+          <p>Founder & CEO, WorkVision Labs</p>
         </div>
         <div class="card-back">
-          <p>“Our mission is to reduce digital chaos and make async a superpower.”</p>
+          <p>"We're here to turn student coders into confident product builders — one project at a time."</p>
         </div>
       </div>
     </div>
@@ -379,57 +471,98 @@ h1 {
         <div class="card-front">
           <img src="https://media.licdn.com/dms/image/v2/D5635AQGXiA6mIsa6TQ/profile-framedphoto-shrink_400_400/B56ZZb36cHGUAg-/0/1745298106408?e=1753815600&v=beta&t=y_9dCSq1e18kxA-3LRvgFdeODs1JejcDjwHk7fk0EGA" alt="Nikhil Dubey">
           <h3>Nikhil Dubey</h3>
-          <p>Software Engineer - Data & Product</p>
+          <p>Co-founder & CTO, WorkVision Labs</p>
         </div>
         <div class="card-back">
-          <p>“I believe software should feel invisible — quiet, intelligent, empowering.”</p>
+          <p>"College should feel like a launchpad — not a waiting room. We’re here to build that rocket."</p>
         </div>
       </div>
     </div>
   </div>
 </section>
+ <section class="mentors">
+      <h2 class="mentor-title">Lead Mentor</h2>
+      <div class="mentor-grid">
+        <div class="mentor-card">
+          <img src="https://media.licdn.com/dms/image/v2/D5603AQHeL7R7kYA6HA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1688299955537?e=1756339200&v=beta&t=b1kORgbPX_ghU4G_wuqCke3s9jZtAJ_w6anI7Pnh9bw" alt="Mentor Name">
+          <h3>Aman Kumar</h3>
+          <p>Software Engineer<br/>A.P. Moller - Maersk</p>
+        </div>
+      
+      </div>
+    </section>
 
     <div class="faq-section">
       <h3>Frequently Asked Questions</h3>
-      <p>Got questions? We’ll answer everything about launch dates, early access, features, and team use cases in our upcoming FAQ doc. Stay tuned!</p>
+      <p>Got questions? We’ll share all details about cohorts, project formats, and mentor profiles in our upcoming launch doc. Stay tuned!</p>
     </div>
 
-<div class="social-section">
-  <h3>Connect With Us</h3>
-  <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-  <a href="https://www.linkedin.com/company/workvisionlabs/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-  <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-</div>
+    <div class="social-section">
+      <h3>Connect With Us</h3>
+      <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/company/workvisionlabs/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
   </div>
-  <script>
-  const text ="TSync—Meet less,Sync more";
-  const titleEl = document.getElementById("hero-title");
-  let i = 0;
-  let typing = true;
 
-  function typeLoop() {
-    if (typing) {
-      if (i < text.length) {
-        titleEl.innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeLoop, 120);
+  <script>
+    const text = "Learn. Build. Ship.";
+    const titleEl = document.getElementById("hero-title");
+    let i = 0;
+    let typing = true;
+
+    function typeLoop() {
+      if (typing) {
+        if (i < text.length) {
+          titleEl.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typeLoop, 120);
+        } else {
+          typing = false;
+          setTimeout(typeLoop, 2000);
+        }
       } else {
-        typing = false;
-        setTimeout(typeLoop, 2000); // Pause before erase
-      }
-    } else {
-      if (i > 0) {
-        titleEl.innerHTML = text.substring(0, i - 1);
-        i--;
-        setTimeout(typeLoop, 120);
-      } else {
-        typing = true;
-        setTimeout(typeLoop, 500); // Pause before re-typing
+        if (i > 0) {
+          titleEl.innerHTML = text.substring(0, i - 1);
+          i--;
+          setTimeout(typeLoop, 100);
+        } else {
+          typing = true;
+          setTimeout(typeLoop, 500);
+        }
       }
     }
-  }
 
-  typeLoop();
+    typeLoop();
+  </script>
+
+<script>
+  const form = document.getElementById("emailForm");
+  const emailInput = document.getElementById("emailInput");
+  const responseMsg = document.getElementById("responseMsg");
+
+  form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const email = emailInput.value;
+
+  console.log("Submitting email:", email); // Debug
+
+  fetch("https://script.google.com/macros/s/AKfycby2YdcO0AhRDkGV2S7rfuIxnA4W9-DjMwGJEbEaisTnzuCsatLtBAi21DIia0_P-a7Ung/exec", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: "email=" + encodeURIComponent(email)
+  })
+  .then(response => response.text())
+  .then(data => {
+    console.log("Server response:", data); // Debug
+    responseMsg.textContent = "✅ Thanks! You’ve joined the waitlist.";
+    emailInput.value = "";
+  })
+  .catch(error => {
+    console.error("Error:", error);
+    responseMsg.textContent = "❌ Something went wrong. Please try again.";
+  });
+});
 </script>
 
   <footer>
